@@ -5,7 +5,7 @@ test_telegram:
     - service: notify.telegram
       data:
         title: TEST MESSAGE
-        message: 'This is a test!'
+        message: 'This is a test for me!'
         data:
           photo:
             - url: https://i.pinimg.com/originals/c1/55/a1/c155a1b393899ffd7c36ff01090ce8f5.jpg
