@@ -15,7 +15,12 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
-# Example configuration.yaml entry for the Telegram Bot
+####################################################
+#                                                  #
+#                    Telegram Bot                  #
+#                                                  #
+####################################################
+
 telegram_bot:
   - platform: polling
     api_key: !secret telegram_token
@@ -29,7 +34,24 @@ notify:
     chat_id: !secret telegram_chat_id_israel 
     
 
+## Weather Dark Sky
+weather:
+  - platform: darksky
+    mode: daily
+    api_key: !secret darksky_api
+
+
 # Example configuration.yaml entry
 device_tracker:
   - platform: linksys_smart
     host: 192.168.1.1
+
+####################################################
+#                                                  #
+#                      xiaomi                      #
+#                                                  #
+####################################################
+xiaomi_aqara:
+  discovery_retry: 10
+  gateways:
+    - key: !secret xiaomi_gateway_key
