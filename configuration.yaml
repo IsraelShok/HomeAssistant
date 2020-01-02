@@ -32,7 +32,13 @@ notify:
   - platform: telegram
     name: telegram
     chat_id: !secret telegram_chat_id_israel 
-    
+
+
+####################################################
+#                                                  #
+#                      darksky                     #
+#                                                  #
+####################################################
 
 ## Weather Dark Sky
 weather:
@@ -46,6 +52,7 @@ device_tracker:
   - platform: linksys_smart
     host: 192.168.1.1
 
+
 ####################################################
 #                                                  #
 #                      xiaomi                      #
@@ -55,3 +62,4 @@ xiaomi_aqara:
   discovery_retry: 10
   gateways:
     - key: !secret xiaomi_gateway_key
+    - mac: !secret xiaomi_gateway_mac
