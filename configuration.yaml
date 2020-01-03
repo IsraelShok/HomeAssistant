@@ -63,3 +63,18 @@ xiaomi_aqara:
   gateways:
     - key: !secret xiaomi_gateway_key
     - mac: !secret xiaomi_gateway_mac
+
+
+####################################################
+#                                                  #
+#             Check Internet speed                 #
+#                                                  #
+####################################################
+# Example configuration.yaml entry
+speedtestdotnet:
+  scan_interval:
+    minutes: 30
+  monitored_conditions:
+    - ping
+    - download
+    - upload
