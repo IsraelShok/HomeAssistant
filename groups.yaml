@@ -1,0 +1,10 @@
+shabat:
+  name: "זמני כניסת שבת/חג"
+  view: no
+  #icon: mdi:ceiling-light
+  entities:
+   - sensor.shabbat_hebrew_date
+   - sensor.shabbat_parasha
+   - sensor.shabbat_in
+   - sensor.shabbat_out
+   - sensor.shabbat_is_shabbat
