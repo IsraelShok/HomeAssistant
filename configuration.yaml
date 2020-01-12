@@ -96,3 +96,17 @@ sensor:
       - parasha
       - hebrew_date
       - is_shabbat  # state get True if is shabbat and False is shabbat end.
+
+# Example configuration.yaml entry
+sensor:
+  - platform: miflora
+    mac: 'C4:7C:8D:66:46:CD'
+    name: Flower 1
+    force_update: true
+    median: 3
+    monitored_conditions:
+      - moisture
+      - light
+      - temperature
+      - conductivity
+      - battery
