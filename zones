@@ -1,0 +1,17 @@
+  - name: Work
+    latitude: ##.#######
+    longitude: ##.#######
+    icon: mdi:worker
+    radius: 10
+
+  - name: Gan
+    latitude: ##.#######
+    longitude: ##.#######
+    icon: mdi:book-open-variant
+    radius: 50
+
+  - name: school
+    latitude: ##.#######
+    longitude: ##.#######
+    icon: mdi:book-open-page-variant
+    radius: 50
