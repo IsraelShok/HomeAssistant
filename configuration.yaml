@@ -97,16 +97,40 @@ sensor:
       - hebrew_date
       - is_shabbat  # state get True if is shabbat and False is shabbat end.
 
-# Example configuration.yaml entry
-sensor:
   - platform: miflora
-    mac: 'C4:7C:8D:66:46:CD'
-    name: Flower 1
-    force_update: true
-    median: 1
-    monitored_conditions:
-      - moisture
-      - light
-      - temperature
-      - conductivity
-      - battery
+      mac: 'C4:7C:8D:66:46:CD'
+      name: Flower 1
+      force_update: true
+      median: 1
+      monitored_conditions:
+        - moisture
+        - light
+        - temperature
+        - conductivity
+        - battery
+
+media_player:
+  - platform: cast
+
+input_select:
+  radio_station:
+    name: 'Select Radio Station:'
+    options:
+      - GalGalatz
+      - Galatz
+      - Radius 100FM
+      - Echo 99FM
+      - Kan 88FM
+      - 103FM
+      - Lev Hamedina 91FM
+      - Reshet Gimel
+      - Radio Darom
+      - Kol Hayam Haadom 102FM
+    icon: mdi:radio
+  chromecast_radio:
+    name: 'Select Speakers:'
+    options:
+      - Livingroom
+      - Everywhere
+    initial: Everywhere
+    icon: mdi:speaker-wireless
