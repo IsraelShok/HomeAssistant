@@ -14,6 +14,7 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+sensor: !include_dir_merge_list configuration/sensor/
 #zone: !include zones.yaml
 
 ####################################################
@@ -80,58 +81,28 @@ speedtestdotnet:
     - download
     - upload
 
+media_player:
+  - platform: cast
 
-####################################################
-#                                                  #
-#                     Shabbat                      #
-#                                                  #
-####################################################
-sensor:
-  - platform: shabbat
-    havdalah_calc: 42
-    time_before_check: 10
-    time_after_check: 10
-    resources:
-      - in
-      - out
-      - parasha
-      - hebrew_date
-      - is_shabbat  # state get True if is shabbat and False is shabbat end.
-
-  - platform: miflora
-      mac: 'C4:7C:8D:66:46:CD'
-      name: Flower 1
-      force_update: true
-      median: 1
-      monitored_conditions:
-        - moisture
-        - light
-        - temperature
-        - conductivity
-        - battery
-
-#media_player:
-#  - platform: cast
-
-#input_select:
-#  radio_station:
-#    name: 'Select Radio Station:'
-#    options:
-#      - GalGalatz
-#      - Galatz
-#      - Radius 100FM
-#      - Echo 99FM
-#      - Kan 88FM
-#      - 103FM
-#      - Lev Hamedina 91FM
-#      - Reshet Gimel
-#      - Radio Darom
-#      - Kol Hayam Haadom 102FM
-#    icon: mdi:radio
-#  chromecast_radio:
-#    name: 'Select Speakers:'
-#    options:
-#      - Livingroom
-#      - Everywhere
-#    initial: Everywhere
-#    icon: mdi:speaker-wireless
+input_select:
+  radio_station:
+    name: 'Select Radio Station:'
+    options:
+      - GalGalatz
+      - Galatz
+      - Radius 100FM
+      - Echo 99FM
+      - Kan 88FM
+      - 103FM
+      - Lev Hamedina 91FM
+      - Reshet Gimel
+      - Radio Darom
+      - Kol Hayam Haadom 102FM
+    icon: mdi:radio
+  chromecast_radio:
+    name: 'Select Speakers:'
+    options:
+      - Livingroom
+      - Everywhere
+    initial: Everywhere
+    icon: mdi:speaker-wireless
