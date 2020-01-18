@@ -1,0 +1,21 @@
+resources:
+  !include lovelace/resources/resources.yaml
+
+#################################################################
+#  Templates                                                    #
+#################################################################
+decluttering_templates:
+  !include_dir_named lovelace/templates
+
+
+#################################################################
+#  CCH Custom Header                                            #
+#################################################################
+cch:
+  !include lovelace/cch/compact-custom-header.yaml
+
+
+title: Home
+background: var(--background-image)
+views:
+  !include_dir_merge_list lovelace/views/

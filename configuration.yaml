@@ -1,6 +1,41 @@
+###################################################
+#                                                 #
+#     Home Assistant Main Configuration File      #
+#                                                 #
+###################################################
+
+homeassistant:
+  name: !secret name
+  temperature_unit: C
+  time_zone: !secret timezone
+  latitude: !secret latitude
+  longitude: !secret longitude
+  unit_system: metric
+  elevation: 169
+  packages: !include_dir_named packages
+  customize: !include_dir_merge_named configuration/customize/
+  auth_providers:
+    - type: trusted_networks
+      trusted_networks:
+        - 192.168.1.1
+    - type: homeassistant
+
+  whitelist_external_dirs:
+    - /config
+    - /config/tmp
+    - /config/backup/hass
+
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
+
+###################################################
+#                                                 #
+#                     lovelace                    #
+#                                                 #
+###################################################
+lovelace:
+  mode: yaml
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 # http:
@@ -64,7 +99,6 @@ xiaomi_aqara:
   discovery_retry: 10
   gateways:
     - key: !secret xiaomi_gateway_key
-    - mac: !secret xiaomi_gateway_mac
 
 
 ####################################################
