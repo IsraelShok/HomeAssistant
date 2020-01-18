@@ -1,5 +1,5 @@
   - platform: miflora
-      mac: 'C4:7C:8D:66:46:CD'
+      mac: C4:7C:8D:66:46:CD
       name: Flower 1
       force_update: true
       median: 1
