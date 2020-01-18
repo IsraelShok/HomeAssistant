@@ -1,17 +1,17 @@
   - name: Work
-    latitude: ##.#######
-    longitude: ##.#######
+    latitude: 32.072499
+    longitude: 34.795492
     icon: mdi:worker
     radius: 10
 
-  - name: Gan
-    latitude: ##.#######
-    longitude: ##.#######
+  - name: Gan_Tal
+    latitude: 32.068794
+    longitude: 35.265473
     icon: mdi:book-open-variant
     radius: 50
 
   - name: school
-    latitude: ##.#######
-    longitude: ##.#######
+    latitude: 32.073764
+    longitude: 35.265428
     icon: mdi:book-open-page-variant
     radius: 50
