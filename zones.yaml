@@ -1,23 +1,29 @@
-  - name: Work
+  - name: עבודה ישראל
     latitude: 32.072499
     longitude: 34.795492
     icon: mdi:worker
     radius: 20
 
-  - name: Gan_Tal
+  - name: משפחתון טל
     latitude: 32.068794
     longitude: 35.265473
     icon: mdi:book-open-variant
     radius: 30
 
-  - name: school
+  - name: נוה בית ספר
     latitude: 32.073764
     longitude: 35.265428
     icon: mdi:book-open-page-variant
     radius: 30
 
-  - name: Smadar School
+  - name: סמדר לימודים
     latitude: 32.1332643
     longitude: 34.8313265
     icon: mdi:worker
+    radius: 20
+
+  - name: גן ארבל
+    latitude: 32.071221
+    longitude: 35.269677
+    icon: mdi:book-open-variant
     radius: 20
