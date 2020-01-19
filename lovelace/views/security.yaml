@@ -1,0 +1,171 @@
+title: Man Security
+path: man-security
+icon: mdi:shield-home
+cards:
+
+#################################################################
+#                                                               #
+#   Smoke Alarm                                                 #
+#                                                               #
+#################################################################
+
+  - type: vertical-stack
+    cards:
+      - type: custom:decluttering-card
+        template: title_template
+        variables:
+          - name: "Smoke Detectors"
+ 
+      - type: entities
+        entities:
+          - binary_sensor.smoke_sensor_158d00028ee7fb 
+
+#################################################################
+#                                                               #
+#   Washer and Dryer                                            #
+#                                                               #
+#################################################################
+
+      - type: vertical-stack
+        cards:
+          - type: custom:decluttering-card
+            template: title_template
+            variables:
+              - name: "Laundry"     
+          - type: horizontal-stack
+            cards:
+              - type: 'custom:decluttering-card'
+                template: laundry 
+                variables:
+                  - image: washingmachine.jpg
+                  - entity_status: washing_machine_state
+                  - entity: washing_machine
+                  - entity_energy: washing_machine_power
+                  - entity_energy_today: washing_machine_yesterday
+
+          - type: custom:mini-graph-card
+            name: Washing Machine Consumption
+            entities: 
+              - entity: sensor.washing_machine_power
+                name: Washer
+                show_state: true
+                unit: 'W'
+            icon: mdi:flash
+            height: 40
+            line_color: '#3498db'
+            line_width: 2
+            font_size: 70
+            hours_to_show: 72
+            points_per_hour: 1
+            show:
+              extrema: true
+              fill: true
+
+#################################################################
+#                                                               #
+#   Door Status                                                 #
+#                                                               #
+#################################################################
+
+  - type: vertical-stack
+    cards:
+      - type: custom:decluttering-card
+        template: title_template
+        variables:
+          - name: "Door"
+
+      - type: entities
+        entities:
+          - binary_sensor.door_window_sensor_158d0001ef3425
+          - binary_sensor.door_window_sensor_158d00027a59c6
+
+
+#################################################################
+#                                                               #
+#    Door Air Conditioner                                       #
+#                                                               #
+#################################################################
+
+      - type: custom:decluttering-card
+        template: title_template
+        variables:
+          - name: "Air Conditioner"
+
+      - type: entities
+        entities:
+            - binary_sensor.door_window_sensor_158d0002ea866a
+
+      - type: picture-glance
+        title: Air Conditioner Yakir
+        tap_action: toggle
+        entities:
+          - switch.ac_yakir
+        image: /local/lovelace/switch/Air-Conditioner-yakri.jpg
+
+#################################################################
+#                                                               #
+#   Dog Walk                                                    #
+#                                                               #
+#################################################################
+
+
+      - type: entities
+        entities:
+          - timer.dogwalk
+        state_filter:
+          - 'active'
+
+#################################################################
+#                                                               #
+#   Motion Sensor                                               #
+#                                                               #
+#################################################################
+
+  - type: vertical-stack
+    cards:
+      - type: custom:decluttering-card
+        template: title_template
+        variables:
+          - name: "Motion Sensors"
+ 
+  - type: vertical-stack
+    cards:
+      - type: entities
+        entities:
+          - binary_sensor.motion_sensor_158d0002047c5a
+          - binary_sensor.motion_sensor_158d000204bfcb
+          - binary_sensor.motion_sensor_158d0002b42fa3
+          - binary_sensor.motion_sensor_158d00024e7972
+          - binary_sensor.motion_sensor_158d000272bc63
+
+#################################################################
+#                                                               #
+#   Last IP Login                                               #
+#                                                               #
+#################################################################
+
+      - type: custom:decluttering-card
+        template: title_template
+        variables:
+          - name: "IP Address Tracking"
+
+      - type: entities
+        entities:
+          - entity: sensor.myip
+            name: My IP address is
+            icon: mdi:ip-network
+        
+      - type: entities
+        entities:
+          - type: custom:bar-card
+            title_position: inside
+            align: center
+            padding: 4px
+            card_style: 
+              border-radius: 5px
+            columns: 2
+            entities:
+              - entity: sensor.last_successful_authentication
+                title: Last successful
+              - entity: sensor.authentication_known_ip_info
+                title: Known iP info              
