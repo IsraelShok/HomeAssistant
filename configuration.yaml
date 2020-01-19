@@ -11,7 +11,7 @@ homeassistant:
   latitude: !secret latitude
   longitude: !secret longitude
   unit_system: metric
-  elevation: 169
+  elevation: 650
   packages: !include_dir_named packages
   customize: !include_dir_merge_named configuration/customize/
   auth_providers:
@@ -20,10 +20,10 @@ homeassistant:
         - 192.168.1.1
     - type: homeassistant
 
-  whitelist_external_dirs:
-    - /config
-    - /config/tmp
-    - /config/backup/hass
+#  whitelist_external_dirs:
+#    - /config
+#    - /config/tmp
+#    - /config/backup/hass
 
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
