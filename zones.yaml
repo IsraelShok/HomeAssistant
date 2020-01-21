@@ -13,7 +13,7 @@
   - name: נוה בית ספר
     latitude: 32.073764
     longitude: 35.265428
-    icon: mdi:book-open-page-variant
+    icon: mdi:chair-school
     radius: 30
 
   - name: סמדר לימודים
