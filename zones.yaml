@@ -2,7 +2,7 @@
     latitude: 32.072499
     longitude: 34.795492
     icon: mdi:worker
-    radius: 20
+    radius: 50
 
   - name: משפחתון טל
     latitude: 32.068794
@@ -20,10 +20,10 @@
     latitude: 32.1332643
     longitude: 34.8313265
     icon: mdi:worker
-    radius: 20
+    radius: 50
 
   - name: גן ארבל
     latitude: 32.071221
     longitude: 35.269677
     icon: mdi:book-open-variant
-    radius: 20
+    radius: 30

@@ -46,11 +46,13 @@ tts:
   - platform: google_translate
 
 group: !include groups.yaml
-automation: !include automations.yaml
+automation: !include_dir_merge_list configuration/automations/
 script: !include scripts.yaml
 scene: !include scenes.yaml
 sensor: !include_dir_merge_list configuration/sensor/
 zone: !include zones.yaml
+notify: !include configuration/notify/notify.yaml
+
 
 ####################################################
 #                                                  #
@@ -60,15 +62,9 @@ zone: !include zones.yaml
 
 telegram_bot:
   - platform: polling
-    api_key: !secret telegram_token
+    api_key: !secret TelegramBotApiKey
     allowed_chat_ids:
-      - !secret telegram_chat_id_israel
-
-# Example configuration.yaml entry for the notifier
-notify:
-  - platform: telegram
-    name: telegram
-    chat_id: !secret telegram_chat_id_israel 
+      - !secret telegram_israel
 
 
 ####################################################
