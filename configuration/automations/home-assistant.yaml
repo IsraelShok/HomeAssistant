@@ -7,7 +7,7 @@
     platform: homeassistant
     event: start
   action:
-    - service: notify.avi_telegram 
+    - service: notify.Israel_Telegram
       data:
         title: 'System info'
         message: 'Home Assistant is Up and Running'
