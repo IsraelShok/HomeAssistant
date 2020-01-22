@@ -119,8 +119,7 @@ speedtestdotnet:
 #                                                  #
 ####################################################
 
-switcher_aio:
-  switcherIP: 192.168.1.126
+switcher_kis:
   phone_id: Raspberry
   device_id: !secret switcher_device_id
   device_password: 00000000
