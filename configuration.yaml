@@ -123,7 +123,7 @@ switcher_aio:
   switcherIP: 192.168.1.126
   phone_id: Raspberry
   device_id: !secret switcher_device_id
-  device_password: !secret switcher_device_password
+  device_password: 00000000
 
 media_player:
   - platform: cast
