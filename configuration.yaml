@@ -119,7 +119,7 @@ speedtestdotnet:
 #                                                  #
 ####################################################
 
-switcher_aio:
+switcher_kis:
   phone_id: 0000
   device_id: !secret switcher_device_id
   device_password: 00000000
