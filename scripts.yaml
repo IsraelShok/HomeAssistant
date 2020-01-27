@@ -2,7 +2,7 @@
 test_telegram:
   alias: 'test_telegram'
   sequence:
-    - service: notify.telegram
+    - service: notify.Israel_Telegram
       data:
         title: TEST MESSAGE
         message: 'This is a test for me!'
