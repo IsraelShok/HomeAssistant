@@ -8,17 +8,17 @@
     latitude: 32.068794
     longitude: 35.265473
     icon: mdi:book-open-variant
-    radius: 30
+    radius: 50
 
   - name: נוה בית ספר
     latitude: 32.073764
     longitude: 35.265428
     icon: mdi:chair-school
-    radius: 30
+    radius: 50
 
   - name: סמדר לימודים
-    latitude: 32.1332643
-    longitude: 34.8313265
+    latitude: 32.1347946
+    longitude: 34.831374
     icon: mdi:worker
     radius: 50
 
@@ -26,4 +26,4 @@
     latitude: 32.071221
     longitude: 35.269677
     icon: mdi:book-open-variant
-    radius: 30
+    radius: 50
