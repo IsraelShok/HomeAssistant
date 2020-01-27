@@ -17,10 +17,10 @@
     radius: 50
 
   - name: סמדר לימודים
-    latitude: 32.1347946
-    longitude: 34.831374
+    latitude: 32.138555
+    longitude: 34.8313265
     icon: mdi:worker
-    radius: 50
+    radius: 100
 
   - name: גן ארבל
     latitude: 32.071221
