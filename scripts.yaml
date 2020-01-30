@@ -1,15 +1,3 @@
-
-test_telegram:
-  alias: 'test_telegram'
-  sequence:
-    - service: notify.Israel_Telegram
-      data:
-        title: TEST MESSAGE
-        message: 'This is a test for me!'
-        data:
-          photo:
-            - url: https://i.pinimg.com/originals/c1/55/a1/c155a1b393899ffd7c36ff01090ce8f5.jpg
-
 ilradio:
   alias: Play Radio on Chromecast Audio
   sequence:
