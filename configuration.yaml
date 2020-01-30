@@ -150,3 +150,8 @@ input_select:
       - Everywhere
     initial: Everywhere
     icon: mdi:speaker-wireless
+
+shabat_stay:
+   name: Stay Shabat
+   initial: on
+   icon: mdi:cellphone-iphone
