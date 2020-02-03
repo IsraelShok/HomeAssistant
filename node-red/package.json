@@ -1,0 +1,12 @@
+{
+    "name": "node-red-project",
+    "description": "A Node-RED Project",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "node-red-contrib-broadlink-control": "~1.0.6",
+        "node-red-contrib-ewelink": "~1.0.2",
+        "node-red-contrib-telegrambot": "~7.1.1",
+        "node-red-node-tail": "~0.1.1"
+    }
+}
