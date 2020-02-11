@@ -159,7 +159,7 @@ climate:
   - platform: smartir
     name: Salon AC
     unique_id: salon_ac
-    device_code: 1340
+    device_code: 1560
     controller_data: 192.168.1.123
     temperature_sensor: sensor.tmprtvrh_slvn
     humidity_sensor: sensor.tmprtvrh_slvn_2
