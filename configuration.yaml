@@ -55,6 +55,11 @@ zone: !include zones.yaml
 notify: !include configuration/notify/notify.yaml
 input_boolean: !include configuration/input_boolean.yaml
 
+panel_iframe:
+  dash:
+    title: Node red Dash
+    url: http://192.168.1.138:1880/endpoint/ui
+
 ####################################################
 #                                                  #
 #                    Telegram Bot                  #
