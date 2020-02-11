@@ -166,10 +166,10 @@ climate:
     power_sensor: binary_sensor.vytrynh
 
   - platform: smartir
-      name: Horim AC
-      unique_id: horim_ac
-      device_code: 1200
-      controller_data: 192.168.1.121
-      temperature_sensor: sensor.tmprtvrh_hvrym
-      humidity_sensor: sensor.tmprtvrh_hvrym_2
-      power_sensor: binary_sensor.vytrynh
+    name: Horim AC
+    unique_id: horim_ac
+    device_code: 1200
+    controller_data: 192.168.1.121
+    temperature_sensor: sensor.tmprtvrh_hvrym
+    humidity_sensor: sensor.tmprtvrh_hvrym_2
+    power_sensor: binary_sensor.vytrynh
