@@ -94,18 +94,6 @@ device_tracker:
 
 ####################################################
 #                                                  #
-#                      xiaomi                      #
-#                                                  #
-####################################################
-#xiaomi_aqara:
-#  discovery_retry: 10
-#  gateways:
-#    - key: !secret xiaomi_gateway_key
-#      host: 192.168.1.156
-
-
-####################################################
-#                                                  #
 #             Check Internet speed                 #
 #                                                  #
 ####################################################
@@ -155,3 +143,24 @@ input_select:
       - Everywhere
     initial: Everywhere
     icon: mdi:speaker-wireless
+
+smartir:
+
+switch:
+  - platform: broadlink
+    host: 192.168.1.121
+    mac: '34:ea:34:58:b6:e8'
+
+  - platform: broadlink
+    host: 192.168.1.123
+    mac: 'b4:43:0d:cc:2e:af'
+
+climate:
+  - platform: smartir
+    name: Salon AC
+    unique_id: salon_ac
+    device_code: 1340
+    controller_data: 192.168.1.123
+    temperature_sensor: sensor.tmprtvrh_slvn
+    humidity_sensor: sensor.tmprtvrh_slvn_2
+    power_sensor: binary_sensor.vytrynh
