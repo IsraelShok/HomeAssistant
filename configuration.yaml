@@ -147,9 +147,9 @@ input_select:
 smartir:
 
 switch:
-  - platform: broadlink
-    host: 192.168.1.121
-    mac: '34:ea:34:58:b6:e8'
+#  - platform: broadlink
+#    host: 192.168.1.121
+#    mac: '34:ea:34:58:b6:e8'
 
   - platform: broadlink
     host: 192.168.1.123
