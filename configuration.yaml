@@ -39,9 +39,8 @@ lovelace:
   mode: storage
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
- http:
-   cors_allowed_origins:
-     - https://keitetran.github.io/BroadlinkIRTools/dist/#/
+# http:
+#   base_url: example.duckdns.org:8123
 
 # Text to speech
 tts:
