@@ -118,6 +118,13 @@ switcher_kis:
   device_id: !secret switcher_device_id
   device_password: 00000000
 
+
+####################################################
+#                                                  #
+#                    Media Player                  #
+#                                                  #
+####################################################
+
 media_player:
   - platform: cast
 
@@ -144,16 +151,23 @@ input_select:
     initial: Everywhere
     icon: mdi:speaker-wireless
 
+
+####################################################
+#                                                  #
+#                    Air Condition                 #
+#                                                  #
+####################################################
+
 smartir:
 
 switch:
   - platform: broadlink
     host: 192.168.1.121
-    mac: '34:ea:34:58:b6:e8'
+    mac: broadlink_mac_121
 
   - platform: broadlink
     host: 192.168.1.123
-    mac: 'b4:43:0d:cc:2e:af'
+    mac: broadlink_mac_121
 
 climate:
   - platform: smartir
@@ -173,3 +187,19 @@ climate:
     temperature_sensor: sensor.tmprtvrh_hvrym
     humidity_sensor: sensor.tmprtvrh_hvrym_2
     power_sensor: binary_sensor.vytrynh
+
+
+####################################################
+#                                                  #
+#                    Sonoff devices                #
+#                                                  #
+####################################################
+
+sonoff:
+  username: !secret sonoff_user
+  password: !secret sonoff_pass
+  scan_interval: 60
+  grace_period: 600
+  api_region: 'eu'
+  entity_prefix: True
+  debug: False
