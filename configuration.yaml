@@ -182,7 +182,7 @@ climate:
   - platform: smartir
     name: Horim AC
     unique_id: horim_ac
-    device_code: 1200
+    device_code: 8882
     controller_data: 192.168.1.121
     temperature_sensor: sensor.tmprtvrh_hvrym
     humidity_sensor: sensor.tmprtvrh_hvrym_2
