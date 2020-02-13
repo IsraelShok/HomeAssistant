@@ -163,11 +163,11 @@ smartir:
 switch:
   - platform: broadlink
     host: 192.168.1.121
-    mac: broadlink_mac_121
+    mac: !secret broadlink_mac_121
 
   - platform: broadlink
     host: 192.168.1.123
-    mac: broadlink_mac_121
+    mac: !secret broadlink_mac_121
 
 climate:
   - platform: smartir
