@@ -44,7 +44,7 @@ MIN_TIME_BETWEEN_UPDATES = timedelta(minutes=5)
 # try:
 #     conf_file = config.get_default_config_dir() + '/configuration.yaml'
 # except:
-conf_file = '~/home/pi/HomeAssistant/homeassistant/configuration.yaml'
+conf_file = '~/HomeAssistant/homeassistant/configuration.yaml'
 load_config = config.load_yaml_config_file(conf_file)
 
 try:
