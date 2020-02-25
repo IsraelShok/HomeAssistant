@@ -66,11 +66,11 @@ panel_iframe:
 #                                                  #
 ####################################################
 
-telegram_bot:
-  - platform: polling
-    api_key: !secret TelegramBotApiKey
-    allowed_chat_ids:
-      - !secret telegram_israel
+#telegram_bot:
+#  - platform: polling
+#    api_key: !secret TelegramBotApiKey
+#    allowed_chat_ids:
+#      - !secret telegram_israel
 
 
 ####################################################

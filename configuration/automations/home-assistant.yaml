@@ -1,12 +1,12 @@
 # Home Assistant is Up and Running ##
 
-- alias: 'Startup Notification'
-  initial_state: 'on'
-  trigger:
-    platform: homeassistant
-    event: start
-  action:
-    - service: notify.Israel_Telegram
-      data:
-        title: 'System info'
-        message: 'Home Assistant is Up and Running'
+#- alias: 'Startup Notification'
+#  initial_state: 'on'
+#  trigger:
+#    platform: homeassistant
+#    event: start
+#  action:
+#    - service: notify.Israel_Telegram
+#      data:
+#        title: 'System info'
+#        message: 'Home Assistant is Up and Running'

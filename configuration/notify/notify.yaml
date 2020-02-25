@@ -1,8 +1,8 @@
 
 ## Telegram Israel
-  - name: Israel_Telegram
-    platform: telegram
-    chat_id: !secret telegram_israel
+#  - name: Israel_Telegram
+#    platform: telegram
+#    chat_id: !secret telegram_israel
 
 ## Telegram Smadar
 #  - name: Smadar_Telegram
