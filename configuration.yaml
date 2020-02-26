@@ -118,6 +118,14 @@ switcher_kis:
   device_id: !secret switcher_device_id
   device_password: 00000000
 
+switcher_aio:
+  phone_id: xxxx
+  device_id: !secret switcher_device_id
+  device_password: xxxxxxxx
+  create_view: true
+  create_groups: true
+  schedules_scan_interval:
+    minutes: 5
 
 ####################################################
 #                                                  #
