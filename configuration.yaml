@@ -119,9 +119,9 @@ switcher_kis:
   device_password: 00000000
 
 switcher_aio:
-  phone_id: xxxx
+  phone_id: 0000
   device_id: !secret switcher_device_id
-  device_password: xxxxxxxx
+  device_password: 00000000
   create_view: true
   create_groups: true
   schedules_scan_interval:
