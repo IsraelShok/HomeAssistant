@@ -59,7 +59,7 @@ from homeassistant.helpers.restore_state import RestoreEntity
 from homeassistant.helpers.event import async_track_time_interval
 
 from homeassistant.components.input_number import (MODE_SLIDER, ATTR_VALUE, ATTR_MIN, ATTR_MAX, ATTR_STEP, ATTR_MODE, SERVICE_SET_VALUE,
-    SERVICE_SET_VALUE_SCHEMA, DOMAIN as INPUT_NUMBER_DOMAIN)
+    DOMAIN as INPUT_NUMBER_DOMAIN)
 from homeassistant.components.script import DOMAIN as SCRIPT_DOMAIN, ATTR_CAN_CANCEL, ATTR_LAST_ACTION, ATTR_LAST_TRIGGERED
 from homeassistant.components.input_select import DOMAIN as INPUT_SELECT_DOMAIN, ATTR_OPTIONS, SERVICE_SELECT_OPTION, SERVICE_SELECT_NEXT, SERVICE_SELECT_PREVIOUS
 from homeassistant.components.input_text import DOMAIN as INPUT_TEXT_DOMAIN, MODE_TEXT, ATTR_VALUE, ATTR_MIN, ATTR_MAX, ATTR_PATTERN, ATTR_MODE
