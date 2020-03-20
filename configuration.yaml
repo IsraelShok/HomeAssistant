@@ -11,7 +11,7 @@ homeassistant:
   latitude: !secret latitude
   longitude: !secret longitude
   unit_system: metric
-  elevation: 650
+  elevation: 680
   packages: !include_dir_named packages
   customize: !include_dir_merge_named configuration/customize/
   auth_providers:
@@ -185,7 +185,7 @@ climate:
     controller_data: 192.168.1.123
     temperature_sensor: sensor.tmprtvrh_slvn
     humidity_sensor: sensor.tmprtvrh_slvn_2
-    power_sensor: binary_sensor.vytrynh
+    power_sensor: binary_sensor.ac_salon_close_open_sensor
 
   - platform: smartir
     name: Horim AC
@@ -194,7 +194,7 @@ climate:
     controller_data: 192.168.1.121
     temperature_sensor: sensor.tmprtvrh_hvrym
     humidity_sensor: sensor.tmprtvrh_hvrym_2
-    power_sensor: binary_sensor.vytrynh
+    power_sensor: binary_sensor.ac_horim_close_open_sensor
 
 
 ####################################################
