@@ -196,6 +196,13 @@ climate:
     humidity_sensor: sensor.tmprtvrh_hvrym_2
     power_sensor: binary_sensor.ac_horim_close_open_sensor
 
+  - platform: smartir
+    name: Kids AC
+    unique_id: kids_ac
+    device_code: 8882
+    controller_data: 192.168.1.125
+    power_sensor: binary_sensor.ac_kids_close_open_sensor
+
 
 ####################################################
 #                                                  #
