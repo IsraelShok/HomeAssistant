@@ -54,6 +54,8 @@ sensor: !include_dir_merge_list configuration/sensor/
 zone: !include zones.yaml
 notify: !include configuration/notify/notify.yaml
 input_boolean: !include configuration/input_boolean.yaml
+docker_monitor: !include configuration/docker_monitor.yaml
+
 
 panel_iframe:
   dash:
