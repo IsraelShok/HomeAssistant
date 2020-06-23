@@ -249,7 +249,6 @@ sonoff:
 octoprint:
   host: !secret octoprint_host
   api_key: !secret octoprint_api_key
-  name: Ender3
   port: 5000
   bed: true
   number_of_tools: 1
