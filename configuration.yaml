@@ -245,3 +245,9 @@ sonoff:
   api_region: 'as'
   entity_prefix: True
   debug: False
+
+octoprint:
+  host: !secret octoprint_host
+  api_key: !secret octoprint_api_key
+  bed: true
+  number_of_tools: 1
