@@ -249,5 +249,6 @@ sonoff:
 octoprint:
   host: !secret octoprint_host
   api_key: !secret octoprint_api_key
+  port: 5000
   bed: true
   number_of_tools: 1
