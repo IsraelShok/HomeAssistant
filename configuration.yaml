@@ -256,5 +256,5 @@ octoprint:
 camera:
   - platform: mjpeg
     name: OctoPrint
-    still_image_url: http://192.168.1.100:5000/webcam/?action=snapshot
-    mjpeg_url: http://192.168.1.100:5000/webcam/?action=stream
+    still_image_url: http://192.168.1.100:8080/webcam/?action=snapshot
+    mjpeg_url: http://192.168.1.100:8080/?action=stream
