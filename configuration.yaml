@@ -252,3 +252,9 @@ octoprint:
   port: 5000
   bed: true
   number_of_tools: 1
+
+camera:
+  - platform: mjpeg
+    name: OctoPrint
+    still_image_url: http://192.168.1.100:5000/webcam/?action=snapshot
+    mjpeg_url: http://192.168.1.100:5000/webcam/?action=stream
