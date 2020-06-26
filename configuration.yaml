@@ -228,6 +228,8 @@ climate:
     unique_id: kids_ac
     device_code: 8882
     controller_data: 192.168.1.125
+    temperature_sensor: sensor.temperature_kids_room
+    humidity_sensor: sensor.humidity_kids_room
     power_sensor: binary_sensor.ac_kids_close_open_sensor
 
 
