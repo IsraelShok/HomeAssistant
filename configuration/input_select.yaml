@@ -1,0 +1,7 @@
+shabat_air_condition_mode:
+  name: AC mode
+  options:
+    - cool
+    - heat
+    - off
+  initial: off

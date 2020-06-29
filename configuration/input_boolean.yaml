@@ -1,3 +1,7 @@
 shabat_stay:
    name: Stay Shabat
    initial: on
+
+shabat_air_condition:
+   name: air condition
+   initial: off
