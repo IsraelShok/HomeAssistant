@@ -3,5 +3,5 @@ shabat_air_condition_mode:
   options:
     - cool
     - heat
-    - no
-  initial: no
+    - ac_off
+  initial: ac_off
