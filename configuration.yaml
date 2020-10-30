@@ -255,11 +255,6 @@ climate:
 sonoff:
   username: !secret sonoff_user
   password: !secret sonoff_pass
-  scan_interval: 60
-  grace_period: 600
-  api_region: 'as'
-  entity_prefix: True
-  debug: False
 
 octoprint:
   host: !secret octoprint_host
