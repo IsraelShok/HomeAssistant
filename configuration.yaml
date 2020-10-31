@@ -218,14 +218,14 @@ climate:
     humidity_sensor: sensor.tmprtvrh_slvn_2
     power_sensor: binary_sensor.ac_salon_close_open_sensor
 
-  - platform: smartir
-    name: Mahsan AC
-    unique_id: mahsan_ac
-    device_code: 972
-    controller_data: 192.168.1.123
-    temperature_sensor: sensor.tmprtvrh_slvn
-    humidity_sensor: sensor.tmprtvrh_slvn_2
-    power_sensor: binary_sensor.ac_salon_close_open_sensor
+#  - platform: smartir
+#    name: Mahsan AC
+#    unique_id: mahsan_ac
+#    device_code: 972
+#    controller_data: 192.168.1.123
+#    temperature_sensor: sensor.tmprtvrh_slvn
+#    humidity_sensor: sensor.tmprtvrh_slvn_2
+#    power_sensor: binary_sensor.ac_salon_close_open_sensor
 
   - platform: smartir
     name: Horim AC
