@@ -172,21 +172,22 @@ switcher_aio:
 #                                                  #
 ####################################################
 
+remote:
+  - platform: broadlink
+    host: 192.168.1.121
+    mac: !secret broadlink_mac_121
+
+  - platform: broadlink
+    host: 192.168.1.123
+    mac: !secret broadlink_mac_121
+
+  - platform: broadlink
+    host: 192.168.1.125
+    mac: !secret broadlink_mac_121
+
 smartir:
 
 switch:
-#  - platform: broadlink
-#    host: 192.168.1.121
-#    mac: !secret broadlink_mac_121
-#
-#  - platform: broadlink
-#    host: 192.168.1.123
-#    mac: !secret broadlink_mac_121
-#
-#  - platform: broadlink
-#    host: 192.168.1.125
-#    mac: !secret broadlink_mac_121
-
   - platform: rest
     resource: http://127.0.0.1:8126/container/addon_a0d7b954_nodered
     name: nodered
