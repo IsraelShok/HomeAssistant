@@ -3,6 +3,9 @@ resources:
     type: module
 
 decluttering_templates:
+  israel:
+    card:
+      type: button
   template_media_player_chromecast:
     card:
       type: custom:mini-media-player
