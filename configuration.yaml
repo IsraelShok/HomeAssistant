@@ -36,7 +36,7 @@ default_config:
 #                                                 #
 ###################################################
 lovelace:
-  mode: storage
+  mode: yaml
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 # http:
