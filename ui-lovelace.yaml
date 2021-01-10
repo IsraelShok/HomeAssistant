@@ -1,0 +1,58 @@
+decluttering_templates:
+  template_media_player_chromecast:
+    card:
+      type: custom:mini-media-player
+      entity: '[[entity_id]]'
+      group: false
+      tts:
+        platform: google_translate
+      hide:
+        # power: true
+        progress: true
+      shortcuts:
+        columns: 4
+        buttons:
+          - name: Gimmel
+            type: script
+            id: script.media_player_play_radio_stream
+            data:
+              entity_id: '[[entity_id]]'
+              content_id: Kan Gimmel
+          - name: Bet
+            type: script
+            id: script.media_player_play_radio_stream
+            data:
+              entity_id: m'[[entity_id]]'
+              content_id: Kan Bet
+          - name: Galatz
+            type: script
+            id: script.media_player_play_radio_stream
+            data:
+              entity_id: '[[entity_id]]'
+              content_id: Galei Zahal
+          - name: 90 FM
+            type: script
+            id: script.media_player_play_radio_stream
+            data:
+              entity_id: '[[entity_id]]'
+              content_id: Radio 90 FM
+          - name: 99 FM
+            type: script
+            id: script.media_player_play_radio_stream
+            data:
+              entity_id: '[[entity_id]]'
+              content_id: Echo 99 FM
+          - name: Kan 88
+            type: script
+            id: script.media_player_play_radio_stream
+            data:
+              entity_id: '[[entity_id]]'
+              content_id: KAN 88
+          - name: Galgalatz
+            type: script
+            id: script.media_player_play_radio_stream
+            data:
+              entity_id: '[[entity_id]]'
+              content_id: GLGLZ
+          - id: script.media_player_play_radio_stream
+            type: source
