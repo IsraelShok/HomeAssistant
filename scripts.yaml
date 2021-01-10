@@ -28,3 +28,27 @@
 #      media_content_type: audio/mp4
 #    entity_id: media_player.mibox4
 #    service: media_player.play_media
+
+
+media_player_play_radio_stream:
+  sequence:
+    - service: media_player.play_media
+      data_template:
+        entity_id: "{{ entity_id }}"
+        media_content_id: >
+          {% if content_id == "Kan Gimmel" %}
+            http://kanliveicy.media.kan.org.il/icy/kangimmel_mp3?providername=tunein
+          {% elif content_id == "KAN 88" %}
+            http://kanliveicy.media.kan.org.il/icy/kan88_mp3?providername=tunein
+          {% elif content_id == "Kan Bet" %}
+            http://kanliveicy.media.kan.org.il/icy/kanbet_mp3?providername=tunein
+          {% elif content_id == "GLGLZ" %}
+            https://glzwizzlv.bynetcdn.com/glglz_mp3?awCollectionId=misc&awEpisodeId=glglz
+          {% elif content_id == "Galei Zahal" %}
+            http://glzwizzlv.bynetcdn.com/glz_mp3?awCollectionId=misc&awEpisodeId=glz
+          {% elif content_id == "Echo 99 FM" %}
+            https://eco-live.mediacast.co.il/99fm_aac?.m4a&listenerid=066aae8a4c886b90398e894d0978f2f8&awparams=companionAds%3Atrue
+          {% elif content_id == "Radio 90 FM" %}
+            https://icy.streamgates.net/Radio_CDN/Emtza_Haderech/icecast.audio
+          {% endif %}
+        media_content_type: audio/mp3
