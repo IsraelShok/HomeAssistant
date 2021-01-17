@@ -58,9 +58,6 @@ input_select: !include configuration/input_select.yaml
 input_text: !include configuration/input_text.yaml
 input_number: !include configuration/input_number.yaml
 
-docker_monitor: !include configuration/docker_monitor.yaml
-
-
 panel_iframe:
   dash:
     title: Node red Dash
@@ -124,14 +121,14 @@ speedtestdotnet:
 #  device_id: !secret switcher_device_id
 #  device_password: 00000000
 
-switcher_aio:
-  phone_id: !secret switcher_phone_id
-  device_id: !secret switcher_device_id
-  device_password: !secret switcher_password
-  create_view: true
-  create_groups: true
-  schedules_scan_interval:
-    minutes: 5
+#switcher_aio:
+#  phone_id: !secret switcher_phone_id
+#  device_id: !secret switcher_device_id
+#  device_password: !secret switcher_password
+#  create_view: true
+#  create_groups: true
+#  schedules_scan_interval:
+#    minutes: 5
 
 ####################################################
 #                                                  #
@@ -237,7 +234,5 @@ camera:
     still_image_url: http://192.168.1.100:8080/webcam/?action=snapshot
     mjpeg_url: http://192.168.1.100:8080/?action=stream
 
-
-resources:
-  - url: /local/mini-media-player-bundle.js?v=1.12.0
-    type: module
+jewish_calendar:
+  language: hebrew
