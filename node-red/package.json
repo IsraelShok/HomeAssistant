@@ -4,9 +4,22 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
-        "node-red-contrib-broadlink-control": "~1.0.6",
+        "node-red-contrib-bigtimer": "~2.4.0",
+        "node-red-contrib-broadlink-control": "~2.1.1",
+        "node-red-contrib-deconz": "~1.2.0",
         "node-red-contrib-ewelink": "~1.0.2",
-        "node-red-contrib-telegrambot": "~7.1.1",
+        "node-red-contrib-home-assistant-websocket": "~0.25.0",
+        "node-red-contrib-influxdb": "~0.4.1",
+        "node-red-contrib-light-scheduler": "0.0.16",
+        "node-red-contrib-sqlitedb": "~1.4.0",
+        "node-red-contrib-telegrambot": "~8.4.0",
+        "node-red-contrib-telegrambot-home": "~0.5.2",
+        "node-red-contrib-voicerss-tts": "0.0.1",
+        "node-red-dashboard": "~2.23.2",
+        "node-red-node-email": "~1.7.9",
+        "node-red-node-pi-gpio": "~1.2.0",
+        "node-red-node-random": "~0.2.0",
+        "node-red-node-rbe": "~0.2.9",
         "node-red-node-tail": "~0.1.1"
     }
 }
