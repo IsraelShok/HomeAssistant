@@ -1,0 +1,8 @@
+{
+  "domain": "school_holidays",
+  "name": "Israel School Vacation Times",
+  "documentation": "https://github.com/rt400/School-Vacation",
+  "dependencies": [],
+  "codeowners": ["@yuval_mejahez"],
+  "requirements": []
+}
