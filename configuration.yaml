@@ -149,12 +149,6 @@ remote:
     host: 192.168.1.125
     mac: !secret broadlink_mac_121
 
-vacuum:
-  - platform: miio2
-    host: 192.168.1.187
-    token: !secret vacuum
-    name: Mi hihi
-
 smartir:
 
 climate:
