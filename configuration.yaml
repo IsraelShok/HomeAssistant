@@ -157,9 +157,9 @@ climate:
     unique_id: salon_ac
     device_code: 8881
     controller_data: 192.168.1.123
-    temperature_sensor: sensor.tmprtvrh_slvn
-    humidity_sensor: sensor.tmprtvrh_slvn_2
-    power_sensor: binary_sensor.ac_salon_close_open_sensor
+#    temperature_sensor: sensor.tmprtvrh_slvn
+#    humidity_sensor: sensor.tmprtvrh_slvn_2
+    power_sensor: binary_sensor.lumi_lumi_sensor_magnet_76a74d04_on_off
 
 #  - platform: smartir
 #    name: Mahsan AC
