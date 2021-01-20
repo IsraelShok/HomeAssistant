@@ -340,6 +340,7 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
                     await self._controller.send(self._commands['on'])
                     await asyncio.sleep(self._delay)
 
+                _LOGGER.info("self._commands[operation_mode][fan_mode][target_temperature])" + self._commands[operation_mode][fan_mode][target_temperature])
                 await self._controller.send(
                     self._commands[operation_mode][fan_mode][target_temperature])
 
