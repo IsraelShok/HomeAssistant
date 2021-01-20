@@ -7,13 +7,10 @@ secrets.yaml
 OZW_Log.txt
 harmony_harmony_hub.conf
 known_devices.yaml
-custom_components/shabbat/__pycache__/
-custom_components/shabbat/date_update.json
-custom_components/shabbat/hebdate_data.json
-custom_components/shabbat/shabbat_data.json
 custom_components/sonoff/__pycache__/
 custom_components/switcher_aio/__pycache__/
 custom_components/wundergroundpws/__pycache__/
 .sonoff.json
 blueprints/
 core
+venv
