@@ -156,7 +156,7 @@ climate:
     name: Salon AC
     unique_id: salon_ac
     device_code: 8881
-    controller_data: 192.168.1.123
+    controller_data: remote.salon_ir
 #    temperature_sensor: sensor.tmprtvrh_slvn
 #    humidity_sensor: sensor.tmprtvrh_slvn_2
     power_sensor: binary_sensor.lumi_lumi_sensor_magnet_76a74d04_on_off
@@ -174,7 +174,7 @@ climate:
     name: Horim AC
     unique_id: horim_ac
     device_code: 8882
-    controller_data: 192.168.1.121
+    controller_data: remote.horim_ir
     temperature_sensor: sensor.lumi_lumi_weather_temperature
     humidity_sensor: sensor.lumi_lumi_weather_humidity
     power_sensor: binary_sensor.lumi_lumi_sensor_magnet_cae24d04_on_off
@@ -183,7 +183,7 @@ climate:
     name: Kids AC
     unique_id: kids_ac
     device_code: 8882
-    controller_data: 192.168.1.125
+    controller_data: remote.kids_ir
     temperature_sensor: sensor.lumi_lumi_sens_temperature
     humidity_sensor: sensor.lumi_lumi_sens_humidity
     power_sensor: binary_sensor.lumi_lumi_sensor_magnet_83e14d04_on_off
