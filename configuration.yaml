@@ -157,8 +157,8 @@ climate:
     unique_id: salon_ac
     device_code: 8881
     controller_data: remote.salon_ir
-#    temperature_sensor: sensor.tmprtvrh_slvn
-#    humidity_sensor: sensor.tmprtvrh_slvn_2
+    temperature_sensor: sensor.lumi_lumi_weather_a0144d03_temperature
+    humidity_sensor: sensor.lumi_lumi_weather_a0144d03_humidity
     power_sensor: binary_sensor.lumi_lumi_sensor_magnet_76a74d04_on_off
 
 #  - platform: smartir
