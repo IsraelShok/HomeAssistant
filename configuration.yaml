@@ -41,6 +41,9 @@ lovelace:
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 # http:
 #   base_url: example.duckdns.org:8123
+http:
+  ssl_certificate: /etc/letsencrypt/live/shokhome.ddns.net/fullchain.pem
+  ssl_key: /etc/letsencrypt/live/shokhome.ddns.net/privkey.pem
 
 # Text to speech
 tts:
