@@ -217,3 +217,9 @@ camera:
 
 jewish_calendar:
   language: hebrew
+
+cover:
+  - platform: group
+    entities:
+      - cover.halon
+      - cover.vitrina
