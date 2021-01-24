@@ -13,7 +13,7 @@
 #    - sensor.pws_wind_1d_kph
 #    - sensor.pws_alerts
 
+
 garmin:
-name: garmin
-entities:
-- switch.sonoff_1000138678
+  entities:
+    - switch.sonoff_1000138678
