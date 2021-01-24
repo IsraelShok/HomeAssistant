@@ -1,0 +1,6 @@
+sensor:
+  - platform: command_line
+    name: SSL cert expiry
+    unit_of_measurement: days
+    scan_interval: 10800
+    command: "ssl-cert-check -b -c /ssl/cert.pem | awk '{ print $NF }'"
