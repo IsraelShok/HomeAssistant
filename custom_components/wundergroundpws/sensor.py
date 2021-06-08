@@ -2,7 +2,7 @@
 Support for WUndergroundPWS weather service.
 
 For more details about this platform, please refer to the documentation at
-https://home-assistant.io/components/sensor.wundergroundpws/
+https://github.com/cytech/Home-Assistant-wundergroundpws
 """
 import asyncio
 from datetime import timedelta
@@ -33,6 +33,7 @@ _LOGGER = logging.getLogger(__name__)
 
 CONF_ATTRIBUTION = "Data provided by the WUnderground weather service"
 CONF_PWS_ID = 'pws_id'
+CONF_NUMERIC_PRECISION = 'numeric_precision'
 CONF_LANG = 'lang'
 LENGTH_MILLIMETERS = 'mm'
 LENGTH_METERS = 'm'
@@ -41,26 +42,12 @@ DEFAULT_LANG = 'en-US'
 
 MIN_TIME_BETWEEN_UPDATES = timedelta(minutes=5)
 
-conf_file = '/config/configuration.yaml'
-load_config = config.load_yaml_config_file(conf_file)
-
-try:
-    UNIT_SYSTEM = load_config['homeassistant']['unit_system']
-except KeyError as err:
-    UNIT_SYSTEM = "metric"
-
-if UNIT_SYSTEM == 'imperial':
-    TEMPUNIT = TEMP_FAHRENHEIT
-    LENGTHUNIT = LENGTH_INCHES
-    ALTITUDEUNIT = LENGTH_FEET
-    SPEEDUNIT = 'mph'
-    PRESSUREUNIT = 'inHg'
-else:
-    TEMPUNIT = TEMP_CELSIUS
-    LENGTHUNIT = LENGTH_MILLIMETERS
-    ALTITUDEUNIT = LENGTH_METERS
-    SPEEDUNIT = 'kph'
-    PRESSUREUNIT = 'mBar'
+TEMPUNIT = 0
+LENGTHUNIT = 1
+ALTITUDEUNIT = 2
+SPEEDUNIT = 3
+PRESSUREUNIT = 4
+RATE = 5
 
 
 # Helper classes for declaring sensor configurations
@@ -105,7 +92,7 @@ class WUSensorConfig:
 class WUCurrentConditionsSensorConfig(WUSensorConfig):
     """Helper for defining sensor configurations for current conditions."""
 
-    def __init__(self, friendly_name, unit_system, field, icon="mdi:gauge",
+    def __init__(self, friendly_name, field, icon="mdi:gauge",
                  unit_of_measurement=None, device_class=None):
         """Constructor.
 
@@ -120,9 +107,9 @@ class WUCurrentConditionsSensorConfig(WUSensorConfig):
         super().__init__(
             friendly_name,
             "conditions",
-            value=lambda wu: wu.data['observations'][0][unit_system][field],
+            value=lambda wu: wu.data['observations'][0][wu.unit_system][field],
             icon=icon,
-            unit_of_measurement=unit_of_measurement,
+            unit_of_measurement=lambda wu: wu.units_of_measurement[unit_of_measurement],
             device_state_attributes={
                 'date': lambda wu: wu.data['observations'][0][
                     'obsTimeLocal']
@@ -172,7 +159,7 @@ class WUDailySimpleForecastSensorConfig(WUSensorConfig):
             feature='forecast',
             value=(lambda wu: wu.data['daypart'][0][field][period]),
             unit_of_measurement=ha_unit,
-            entity_picture=lambda wu: wu.data['daypart'][0]['iconCode'][period] if not icon else None,
+            entity_picture=lambda wu: str(wu.data['daypart'][0]['iconCode'][period]) if not icon else None,
             icon=icon,
             device_state_attributes={
                 'date': lambda wu: wu.data['observations'][0]['obsTimeLocal']
@@ -201,8 +188,7 @@ SENSOR_TYPES = {
     'humidity': WUSensorConfig(
         'Relative Humidity',
         'observations',
-        value=lambda wu: int(wu.data['observations'][0][
-                                 'humidity']),
+        value=lambda wu: int(wu.data['observations'][0]['humidity'] or 0),
         unit_of_measurement='%',
         icon="mdi:water-percent",
         device_class="humidity"),
@@ -229,8 +215,7 @@ SENSOR_TYPES = {
     'winddir': WUSensorConfig(
         'Wind Direction',
         'observations',
-        value=lambda wu: int(wu.data['observations'][0][
-                                 'winddir']),
+        value=lambda wu: int(wu.data['observations'][0]['winddir'] or 0),
         unit_of_measurement='\u00b0',
         icon="mdi:weather-windy"),
     'today_summary': WUSensorConfig(
@@ -240,27 +225,27 @@ SENSOR_TYPES = {
         unit_of_measurement='\u00b0',
         icon="mdi:gauge"),
     'elev': WUCurrentConditionsSensorConfig(
-        'Elevation', UNIT_SYSTEM, 'elev', 'mdi:elevation-rise', ALTITUDEUNIT),
+        'Elevation', 'elev', 'mdi:elevation-rise', ALTITUDEUNIT),
     'dewpt': WUCurrentConditionsSensorConfig(
-        'Dewpoint', UNIT_SYSTEM, 'dewpt', 'mdi:water', TEMPUNIT),
+        'Dewpoint', 'dewpt', 'mdi:water', TEMPUNIT),
     'heatIndex': WUCurrentConditionsSensorConfig(
-        'Heat index', UNIT_SYSTEM, 'heatIndex', "mdi:thermometer", TEMPUNIT),
+        'Heat index', 'heatIndex', "mdi:thermometer", TEMPUNIT),
     'windChill': WUCurrentConditionsSensorConfig(
-        'Wind chill', UNIT_SYSTEM, 'windChill', "mdi:thermometer", TEMPUNIT),
+        'Wind chill', 'windChill', "mdi:thermometer", TEMPUNIT),
     'precipRate': WUCurrentConditionsSensorConfig(
-        'Precipitation Rate', UNIT_SYSTEM, 'precipRate', "mdi:umbrella", LENGTHUNIT),
+        'Precipitation Rate', 'precipRate', "mdi:umbrella", RATE),
     'precipTotal': WUCurrentConditionsSensorConfig(
-        'Precipitation Today', UNIT_SYSTEM, 'precipTotal', "mdi:umbrella", LENGTHUNIT),
+        'Precipitation Today', 'precipTotal', "mdi:umbrella", LENGTHUNIT),
     'pressure': WUCurrentConditionsSensorConfig(
-        'Pressure', UNIT_SYSTEM, 'pressure', "mdi:gauge", PRESSUREUNIT,
+        'Pressure', 'pressure', "mdi:gauge", PRESSUREUNIT,
         device_class="pressure"),
     'temp': WUCurrentConditionsSensorConfig(
-        'Temperature', UNIT_SYSTEM, 'temp', "mdi:thermometer", TEMPUNIT,
+        'Temperature', 'temp', "mdi:thermometer", TEMPUNIT,
         device_class="temperature"),
     'windGust': WUCurrentConditionsSensorConfig(
-        'Wind Gust', UNIT_SYSTEM, 'windGust', "mdi:weather-windy", SPEEDUNIT),
+        'Wind Gust', 'windGust', "mdi:weather-windy", SPEEDUNIT),
     'windSpeed': WUCurrentConditionsSensorConfig(
-        'Wind Speed', UNIT_SYSTEM, 'windSpeed', "mdi:weather-windy", SPEEDUNIT),
+        'Wind Speed', 'windSpeed', "mdi:weather-windy", SPEEDUNIT),
     # forecast
     'weather_1d': WUDailyTextForecastSensorConfig(0),
     'weather_1n': WUDailyTextForecastSensorConfig(1),
@@ -362,6 +347,7 @@ LANG_CODES = [
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Required(CONF_API_KEY): cv.string,
     vol.Required(CONF_PWS_ID): cv.string,
+    vol.Required(CONF_NUMERIC_PRECISION): cv.string,
     vol.Optional(CONF_LANG, default=DEFAULT_LANG): vol.All(vol.In(LANG_CODES)),
     vol.Inclusive(CONF_LATITUDE, 'coordinates',
                   'Latitude and longitude must exist together'): cv.latitude,
@@ -378,14 +364,17 @@ async def async_setup_platform(hass: HomeAssistantType, config: ConfigType,
     latitude = config.get(CONF_LATITUDE, hass.config.latitude)
     longitude = config.get(CONF_LONGITUDE, hass.config.longitude)
     pws_id = config.get(CONF_PWS_ID)
+    numeric_precision = config.get(CONF_NUMERIC_PRECISION)
 
     if hass.config.units.is_metric:
         unit_system_api = 'm'
+        unit_system = 'metric'
     else:
         unit_system_api = 'e'
+        unit_system = 'imperial'
 
     rest = WUndergroundData(
-        hass, config.get(CONF_API_KEY), pws_id, unit_system_api,
+        hass, config.get(CONF_API_KEY), pws_id, numeric_precision, unit_system_api, unit_system, 
         config.get(CONF_LANG), latitude, longitude)
 
     if pws_id is None:
@@ -518,18 +507,26 @@ class WUndergroundSensor(Entity):
 class WUndergroundData:
     """Get data from WUnderground."""
 
-    def __init__(self, hass, api_key, pws_id, unit_system_api, lang, latitude, longitude):
+    def __init__(self, hass, api_key, pws_id, numeric_precision, unit_system_api, unit_system, lang, latitude, longitude):
         """Initialize the data object."""
         self._hass = hass
         self._api_key = api_key
         self._pws_id = pws_id
+        self._numeric_precision = numeric_precision
         self._unit_system_api = unit_system_api
+        self.unit_system = unit_system
+        self.units_of_measurement = None
         self._lang = 'language={}'.format(lang)
         self._latitude = latitude
         self._longitude = longitude
         self._features = set()
         self.data = None
         self._session = async_get_clientsession(self._hass)
+        
+        if unit_system_api == 'm':
+            self.units_of_measurement = (TEMP_CELSIUS, LENGTH_MILLIMETERS, LENGTH_METERS, 'kph', 'mBar', 'mm/hr')
+        else:
+            self.units_of_measurement = (TEMP_FAHRENHEIT, LENGTH_INCHES, LENGTH_FEET, 'mph', 'inHg', 'in/hr')
 
     def request_feature(self, feature):
         """Register feature to be fetched from WU API."""
@@ -537,7 +534,10 @@ class WUndergroundData:
 
     def _build_url(self, baseurl):
         if baseurl is _RESOURCECURRENT:
-            url = baseurl.format(self._pws_id, self._unit_system_api, self._api_key)
+            if self._numeric_precision == 'none':
+                url = baseurl.format(self._pws_id, self._unit_system_api, self._api_key)
+            else:
+                url = baseurl.format(self._pws_id, self._unit_system_api, self._api_key) + '&numericPrecision=decimal'
         else:
             url = baseurl.format(self._latitude, self._longitude, self._unit_system_api, self._lang, self._api_key)
 
