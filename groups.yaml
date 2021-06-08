@@ -4,5 +4,5 @@ garmin:
     - switch.sonoff_10004edd2b
     - cover.halon
     - cover.vitrina
-    - climate.salon_ac
+    - cover.cover_group
     - media_player.mibox4
