@@ -1,6 +1,7 @@
   - platform: wundergroundpws
     api_key: !secret wunderground_api_key
     pws_id: !secret wunderground_station_id
+    numeric_precision: none
     latitude: !secret latitude
     longitude: !secret longitude
     monitored_conditions:
