@@ -202,13 +202,6 @@ sonoff:
   username: !secret sonoff_user
   password: !secret sonoff_pass
 
-octoprint:
-  host: !secret octoprint_host
-  api_key: !secret octoprint_api_key
-  port: 5000
-  bed: true
-  number_of_tools: 1
-
 camera:
   - platform: mjpeg
     name: OctoPrint
